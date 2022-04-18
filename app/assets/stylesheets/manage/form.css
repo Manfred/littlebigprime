@@ -27,7 +27,8 @@ form div.submit button {
   border-radius: 6px;
 }
 @media (max-width: 640px) {
-  form div.field input {
-    width: 100%;
+  form div.field {
+    display: flex;
+    flex-direction: column;
   }
 }
