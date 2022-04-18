@@ -1,10 +1,6 @@
 .column {
   padding: 2em;
 }
-.column > img
-{
-  width: 60%;
-}
 nav
 {
   padding: .5em;
@@ -13,4 +9,19 @@ nav ul
 {
   display: flex;
   gap: 1em;
+}
+
+/* Temporary styling for the hero screen */
+.hero {
+  display: flex;
+}
+.hero > * {
+  flex: 1;
+}
+.hero img
+{
+  width: 60%;
+}
+footer {
+  display: none;
 }
