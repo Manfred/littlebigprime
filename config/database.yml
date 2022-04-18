@@ -1,0 +1,13 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS", 5).to_i + 2 %>
+development:
+  <<: *default
+  database: littlebigprime_development
+test:
+  <<: *default
+  database: littlebigprime_test
+production:
+  <<: *default
+  database: littlebigprime_production

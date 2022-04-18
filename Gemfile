@@ -12,10 +12,10 @@ gem 'bootsnap', require: false
 gem 'pg'
 gem 'puma'
 
-gem 'sprockets-rails'
 gem 'importmap-rails'
-gem 'turbo-rails'
+gem 'sprockets-rails'
 gem 'stimulus-rails'
+gem 'turbo-rails'
 
 gem 'sidekiq'
 
