@@ -25,14 +25,15 @@ task :setup do
 end
 
 namespace :env do
+  task :shared do
+    comment %(Setting environment necessary for running the application)
+    command 'source /etc/profile.d/rbenv.sh'
+    command 'source /etc/profile.d/secrets.sh'
+  end
+
   task :umask do
     comment %(Setting umask to make files group writable)
     command 'umask 0002'
-  end
-
-  task :path do
-    comment %(Setting path for Ruby shims)
-    command 'export PATH="$PATH:/usr/local/rbenv/shims"'
   end
 end
 
@@ -74,14 +75,14 @@ desc 'Deploy to the server'
 task :deploy do
   deploy do
     primary = fetch(:primary)
+    invoke :'env:shared'
     invoke :'env:umask'
-    invoke :'env:path'
     invoke :'git:clone'
     invoke :'deploy:link_shared_paths'
     command %(bundler config set --local deployment "true")
     command %(bundler install)
     invoke :'rails:db_migrate' if primary
-    invoke :'rails:assets_precompile'
+    # invoke :'rails:assets_precompile'
     invoke :'deploy:cleanup'
 
     on :launch do
