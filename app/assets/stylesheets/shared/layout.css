@@ -1,11 +1,16 @@
 .column {
   padding: 2em;
-  display: flex;
-}
-.column > * {
-  flex: 1;
 }
 .column > img
 {
   width: 60%;
+}
+nav
+{
+  padding: .5em;
+}
+nav ul
+{
+  display: flex;
+  gap: 1em;
 }

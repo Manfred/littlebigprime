@@ -19,6 +19,9 @@ form button {
   white-space: nowrap;
   overflow: hidden;
 }
+form button.inline {
+  padding: .2em .5em;
+}
 form div.submit button {
   border: 1px solid;
   border-radius: 6px;

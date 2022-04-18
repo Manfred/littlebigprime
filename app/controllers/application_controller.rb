@@ -6,4 +6,6 @@ class ApplicationController < ActionController::Base
   default_form_builder ApplicationFormBuilder
 
   before_action -> { I18n.locale = :nl }
+
+  helper_method :authenticated
 end

@@ -14,8 +14,12 @@ nl:
     manage:
       page_title: Content Beheren
   manage:
+    shared:
+      navigation:
+        videos: Videos
     sessions:
       new:
+        page_title: Log in
         username: Gebruikersnaam
         password: Wachtwoord
-        login: Login
+        login: Log in

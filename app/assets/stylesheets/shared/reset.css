@@ -2,8 +2,7 @@ body,
 h1, h2, h3, h4,
 p,
 ul, ol, li,
-table, tr, td,
-form.delete button
+table, tr, td
 {
   margin: 0;
   padding: 0;

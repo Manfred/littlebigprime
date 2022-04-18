@@ -1,4 +1,5 @@
 <div class="column">
+  <h1><%= page_title %></h1>
   <%= form_with model: @session, url: manage_session_path do |form| %>
     <%= form.error :account %>
     <%= form.field :username do %>
