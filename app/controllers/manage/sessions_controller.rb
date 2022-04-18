@@ -14,7 +14,7 @@ module Manage
         start_session(@authenticated_session)
         redirect_to manage_videos_url
       else
-        render :new
+        render :new, status: :unprocessable_entity
       end
     end
 

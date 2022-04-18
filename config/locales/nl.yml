@@ -1,4 +1,13 @@
 nl:
+  activemodel:
+    errors:
+      models:
+        authenticated_session/create:
+          attributes:
+            account:
+              blank: Gebruikersnaam en wachtwoord zijn onjuist
+            password:
+              does_not_match: Wachtwoord is onjuist voor dit account
   layouts:
     application:
       page_title: Little Big Prime
@@ -7,4 +16,6 @@ nl:
   manage:
     sessions:
       new:
+        username: Gebruikersnaam
+        password: Wachtwoord
         login: Login

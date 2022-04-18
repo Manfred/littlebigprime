@@ -1,4 +1,30 @@
-form {
+form div.field label {
+  display: block;
 }
 form div.field input {
+}
+form div.field + div.field {
+  margin-top: 1em;
+}
+form div.submit
+{
+  margin-top: 1em;
+}
+form button {
+  display: block;
+  padding: .5em 1em;
+  text-decoration: none;
+  line-height: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+form div.submit button {
+  border: 1px solid;
+  border-radius: 6px;
+}
+@media (max-width: 640px) {
+  form div.field input {
+    width: 100%;
+  }
 }

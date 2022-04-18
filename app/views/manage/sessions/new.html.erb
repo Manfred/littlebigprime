@@ -2,11 +2,11 @@
   <%= form_with model: @session, url: manage_session_path do |form| %>
     <%= form.error :account %>
     <%= form.field :username do %>
-      <%= form.label_with_error :username %>
+      <%= form.label_with_error :username, t('.username') %>
       <%= form.text_field :username %>
     <% end %>
     <%= form.field :password do %>
-      <%= form.label_with_error :password %>
+      <%= form.label_with_error :password, t('.password') %>
       <%= form.password_field :password, autocomplete: 'current-password' %>
     <% end %>
     <div class="submit">
