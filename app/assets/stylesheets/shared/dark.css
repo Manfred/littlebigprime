@@ -1,0 +1,11 @@
+html,
+body {
+  background: black;
+}
+form,
+form input {
+  color: rgb(250, 250, 250);
+}
+form input {
+  background-color: rgb(40, 40, 40);
+}

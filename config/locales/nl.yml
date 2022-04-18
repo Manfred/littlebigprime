@@ -2,3 +2,9 @@ nl:
   layouts:
     application:
       page_title: Little Big Prime
+    manage:
+      page_title: Content Beheren
+  manage:
+    sessions:
+      new:
+        login: Login

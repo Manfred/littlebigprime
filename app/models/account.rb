@@ -2,6 +2,8 @@
 
 # Stores accounts for content managers.
 class Account < ApplicationRecord
+  has_many :authenticated_sessions, as: :authenticated, dependent: :destroy
+
   def username=(username)
     super(self.class.normalize(username))
   end

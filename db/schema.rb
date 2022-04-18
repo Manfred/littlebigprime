@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_18_084607) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_18_094222) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,6 +20,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_18_084607) do
     t.datetime "created_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
     t.datetime "updated_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
     t.index ["username"], name: "index_accounts_on_username", unique: true
+  end
+
+  create_table "authenticated_sessions", force: :cascade do |t|
+    t.string "authenticated_type", null: false
+    t.bigint "authenticated_id", null: false
+    t.string "secret", null: false
+    t.datetime "created_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.datetime "updated_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.index ["authenticated_type", "authenticated_id"], name: "index_authenticated_sessions_on_authenticated"
   end
 
 end
