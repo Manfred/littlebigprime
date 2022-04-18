@@ -82,7 +82,7 @@ task :deploy do
     command %(bundler config set --local deployment "true")
     command %(bundler install)
     invoke :'rails:db_migrate' if primary
-    # invoke :'rails:assets_precompile'
+    invoke :'rails:assets_precompile'
     invoke :'deploy:cleanup'
 
     on :launch do
