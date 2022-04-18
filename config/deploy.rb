@@ -29,12 +29,17 @@ namespace :env do
     comment %(Setting umask to make files group writable)
     command 'umask 0002'
   end
+
+  task :path do
+    comment %(Setting path for Ruby shims)
+    command 'export PATH="$PATH:/usr/local/rbenv/shims"'
+  end
 end
 
 namespace :db do
   task :backup do
     in_path(fetch(:current_path)) do
-      timestamp = Time.zone.now.strftime('%Y%m%d%H%M')
+      timestamp = Time.now.strftime('%Y%m%d%H%M')
       filename = "#{fetch(:rails_env)}-#{timestamp}.dump"
       comment %(Dump database to #{filename})
       command "pg_dump -U app -C -Fc -w -h localhost -f /var/www/tube/shared/backups/#{filename} tube_#{fetch(:rails_env)}"
@@ -70,10 +75,11 @@ task :deploy do
   deploy do
     primary = fetch(:primary)
     invoke :'env:umask'
+    invoke :'env:path'
     invoke :'git:clone'
     invoke :'deploy:link_shared_paths'
-    command %(/usr/local/rbenv/shims/bundler config set --local deployment "true")
-    command %(/usr/local/rbenv/shims/bundler install)
+    command %(bundler config set --local deployment "true")
+    command %(bundler install)
     invoke :'rails:db_migrate' if primary
     invoke :'rails:assets_precompile'
     invoke :'deploy:cleanup'
