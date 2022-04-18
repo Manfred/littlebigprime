@@ -40,7 +40,7 @@ end
 namespace :db do
   task :backup do
     in_path(fetch(:current_path)) do
-      timestamp = Time.now.strftime('%Y%m%d%H%M')
+      timestamp = Time.zone.now.strftime('%Y%m%d%H%M')
       filename = "#{fetch(:rails_env)}-#{timestamp}.dump"
       comment %(Dump database to #{filename})
       command "pg_dump -U app -C -Fc -w -h localhost -f /var/www/tube/shared/backups/#{filename} tube_#{fetch(:rails_env)}"

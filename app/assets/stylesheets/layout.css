@@ -1,0 +1,11 @@
+.column {
+  padding: 2em;
+  display: flex;
+}
+.column > * {
+  flex: 1;
+}
+.column > img
+{
+  width: 60%;
+}

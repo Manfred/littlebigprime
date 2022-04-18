@@ -17,7 +17,7 @@ Bundler.require(*Rails.groups)
 module Littlebigprime
   class Application < Rails::Application
     config.load_defaults 7.0
-    config.time_zone = "Europe/Amsterdam"
+    config.time_zone = 'Europe/Amsterdam'
     config.generators.system_tests = nil
     config.secret_key_base = ENV.fetch('SECRET_KEY_BASE')
   end

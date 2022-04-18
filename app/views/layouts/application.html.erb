@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Littlebigprime</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title><%= page_title %></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+  <%#= tag(:link, rel: 'apple-touch-icon', href: image_path('touch-icon.png')) %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+  <%= yield %>
+  <footer class="column">
+    <p>© <%= Time.now.year %> Little Big Prime</p>
+  </footer>
+</body>
 </html>
