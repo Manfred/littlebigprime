@@ -19,6 +19,9 @@ gem 'turbo-rails'
 
 gem 'sidekiq'
 
+# Digest passwords.
+gem 'argon2'
+
 group :test do
   gem 'webmock'
 end
