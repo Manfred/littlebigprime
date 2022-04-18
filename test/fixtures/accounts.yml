@@ -1,0 +1,3 @@
+lilly:
+  username: lilly
+  password_digest: <%= Account.new(password: 'secret').password_digest %>
