@@ -68,6 +68,9 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
+    argon2 (2.1.1)
+      ffi (~> 1.14)
+      ffi-compiler (~> 1.0)
     bootsnap (1.11.1)
       msgpack (~> 1.2)
     builder (3.2.4)
@@ -78,6 +81,10 @@ GEM
     crass (1.0.6)
     digest (3.1.0)
     erubi (1.10.0)
+    ffi (1.15.5)
+    ffi-compiler (1.0.1)
+      ffi (>= 1.0.0)
+      rake
     globalid (1.0.0)
       activesupport (>= 5.0)
     hashdiff (1.0.1)
@@ -186,6 +193,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  argon2
   bootsnap
   importmap-rails
   pg
