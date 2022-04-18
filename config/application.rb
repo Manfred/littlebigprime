@@ -19,5 +19,6 @@ module Littlebigprime
     config.load_defaults 7.0
     config.time_zone = "Europe/Amsterdam"
     config.generators.system_tests = nil
+    config.secret_key_base = ENV.fetch('SECRET_KEY_BASE')
   end
 end
