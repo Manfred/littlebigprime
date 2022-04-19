@@ -16,17 +16,17 @@ module Manage
 
     test 'disallows login with incorrect password' do
       post '/manage/session', params: { authenticated_session_create: { username: 'lilly', password: 'wrong' } }
-      assert_response :ok
+      assert_response :unprocessable_entity
     end
 
     test 'disallows login without password' do
       post '/manage/session', params: { authenticated_session_create: { username: 'lilly', password: '' } }
-      assert_response :ok
+      assert_response :unprocessable_entity
     end
 
     test 'disallows login with incorrect username' do
       post '/manage/session', params: { authenticated_session_create: { username: 'unknown', password: 'secret' } }
-      assert_response :ok
+      assert_response :unprocessable_entity
     end
   end
 end
