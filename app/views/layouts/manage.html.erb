@@ -7,11 +7,12 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-
   <%= stylesheet_link_tag "manage", "data-turbo-track": "reload" %>
   <%= javascript_importmap_tags %>
 </head>
 <%= tag.body(class: controller.controller_name) do %>
-  <%= yield %>
+  <div id="viewport">
+    <%= yield %>
+  </div>
 <% end %>
 </html>

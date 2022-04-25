@@ -8,18 +8,36 @@ nl:
               blank: Gebruikersnaam en wachtwoord zijn onjuist
             password:
               does_not_match: Wachtwoord is onjuist voor dit account
+  activerecord:
+    errors:
+      models:
+        password:
+          attributes:
+            plain_text:
+              blank: Wachtwoord mag niet leeg zijn
   layouts:
     application:
       page_title: Little Big Prime
     manage:
       page_title: Content Beheren
   manage:
+    passwords:
+      new:
+        page_title: Wachtwoord toevoegen
+        plain_text: Wachtwoord
+        save: Toevoegen
     shared:
       navigation:
         videos: Videos
+        passwords: Wachtwoorden
     sessions:
       new:
         page_title: Log in
         username: Gebruikersnaam
         password: Wachtwoord
         login: Log in
+  sessions:
+    new:
+      page_title: Log in
+      password: Wachtwoord
+      login: Log in

@@ -1,6 +1,6 @@
 <div class="column">
-  <h1><%= page_title %></h1>
-  <%= form_with model: @session, url: manage_session_path do |form| %>
+  <%= form_with model: @session, url: session_path do |form| %>
+    <%= form.error :target %>
     <%= form.field :password do %>
       <%= form.label_with_error :password, t('.password') %>
       <%= form.password_field :password, autocomplete: 'current-password' %>

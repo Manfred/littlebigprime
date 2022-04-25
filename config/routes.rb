@@ -1,10 +1,14 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root 'pages#index'
+  root 'sessions#new'
   get 'manage', to: 'manage/sessions#new', as: :manage
 
+  resource :session, only: %i[new create destroy]
+  resources :videos, only: %i[index show]
+
   namespace :manage do
+    resources :passwords, only: %i[new index create edit update]
     resource :session, only: %i[new create destroy]
     resources :videos, only: %i[index]
   end

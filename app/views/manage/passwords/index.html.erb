@@ -1,0 +1,20 @@
+<%= render 'manage/shared/navigation' %>
+
+<div class="column">
+  <ul class="actions">
+    <li><%= link_to t('.new'), new_manage_password_path %></li>
+  </ul>
+
+  <table>
+    <tr>
+      <th>Begint met</th>
+      <th>Aangemaakt op</th>
+    </tr>
+  <% @passwords.each do |password| %>
+    <tr>
+      <td><%= password.prefix %>***</td>
+      <td><%= t(password.created_at)%></td>
+    </tr>
+  <% end %>
+  </table>
+</div>

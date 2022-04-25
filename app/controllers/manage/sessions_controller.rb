@@ -4,7 +4,7 @@ module Manage
   # Creates an authenticated session when an account can be authenticated through username and password.
   class SessionsController < ApplicationController
     def new
-      @session = AuthenticatedSession::Create.new
+      @session = AuthenticatedSession::Create.new(verify: :account)
     end
 
     def create
@@ -26,7 +26,7 @@ module Manage
     private
 
     def account_params
-      params.require(:authenticated_session_create).permit(:username, :password)
+      params.require(:authenticated_session_create).permit(:username, :password).merge(verify: :account)
     end
   end
 end

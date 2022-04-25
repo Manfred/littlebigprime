@@ -1,0 +1,12 @@
+<div class="column">
+  <h1><%= page_title %></h1>
+  <%= form_with model: @password, url: manage_passwords_path do |form| %>
+    <%= form.field :plain_text do %>
+      <%= form.label_with_error :plain_text, t('.plain_text') %>
+      <%= form.text_field :plain_text %>
+    <% end %>
+    <div class="submit">
+      <%= form.button t('.save') %>
+    </div>
+  <% end %>
+</div>
