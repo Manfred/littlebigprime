@@ -4,10 +4,8 @@ nl:
       models:
         authenticated_session/create:
           attributes:
-            account:
-              blank: Gebruikersnaam en wachtwoord zijn onjuist
-            password:
-              does_not_match: Wachtwoord is onjuist voor dit account
+            target:
+              blank: Inloggen is mislukt
   activerecord:
     errors:
       models:
