@@ -1,0 +1,34 @@
+body,
+form input,
+form button,
+nav a {
+  color: black;
+}
+form input,
+form div.submit button {
+  background-color: white;
+}
+form input {
+  border: 3px solid black;
+  box-shadow: 3px 3px 0 0 black;
+}
+form input:focus {
+  outline: 3px solid rgb(241, 241, 0);
+}
+form div.submit button {
+  box-shadow: 3px 3px 0 0 black;
+}
+@media (hover: hover) {
+  form div.submit button:hover {
+    background-color: rgb(255, 255, 0);
+  }
+}
+form div.submit button:active {
+  background-color: rgb(241, 241, 0);
+}
+div#viewport {
+  background: radial-gradient(at 0% 100%, white 70%, rgb(0, 255, 0) 70%, rgb(0, 255, 0) 72%, rgb(0, 170, 255) 72%, rgb(0, 170, 255) 90%);
+}
+nav > svg g {
+  fill: rgb(215, 0, 0);
+}

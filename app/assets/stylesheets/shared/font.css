@@ -1,3 +1,4 @@
 body, html, input, button, textarea {
   font: 15px/1.2 "Lucida Grande", verdana, sans-serif;
+  font-weight: bold;
 }
