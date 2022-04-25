@@ -6,32 +6,44 @@ class AuthenticatedSession < ApplicationRecord
   class Create
     include ActiveModel::Model
 
-    attr_accessor :username, :password
+    attr_accessor :verify, :username, :password
 
     def save
       valid? && create
     end
 
     def create
-      account.authenticated_sessions.create
+      target.authenticated_sessions.create
     end
 
     private
 
-    def account
-      return @account if defined?(@account)
+    def target
+      return @target if defined?(@target)
 
-      @account = Account.find_by(username:)
+      @target = find_target
     end
 
-    def password_matches
-      return unless account
-      return if account.password?(password)
-
-      errors.add(:password, :does_not_match)
+    def find_target
+      case verify
+      when :account
+        find_account
+      when :password
+        find_password
+      end
     end
 
-    validates :account, presence: true
-    validate :password_matches
+    def find_account
+      account = Account.find_by(username:)
+      account if account&.password?(password)
+    end
+
+    def find_password
+      Password.active.find do |candidate|
+        candidate.password?(password)
+      end
+    end
+
+    validates :target, presence: true
   end
 end
