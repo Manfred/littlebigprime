@@ -1,1 +1,1 @@
-web: SECRET_KEY_BASE=b8d6c801 puma
+web: SECRET_KEY_BASE=b8d6c801 LITTLE_BIG_UPLOAD_PATH=tmp/uploads puma
