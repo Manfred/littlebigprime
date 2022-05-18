@@ -11,8 +11,6 @@
   <%= javascript_importmap_tags %>
 </head>
 <%= tag.body(class: controller.controller_name) do %>
-  <div id="viewport">
-    <%= yield %>
-  </div>
+  <%= yield %>
 <% end %>
 </html>

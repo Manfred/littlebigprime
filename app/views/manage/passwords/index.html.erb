@@ -1,4 +1,14 @@
-<%= render 'manage/shared/navigation' %>
+<nav>
+  <% if @back.present? %>
+    <span>
+      <%= link_to(@back, title: @back_title) do %>
+        <%== icon_back_svg %>
+      <% end %>
+    </span>
+  <% end %>
+  <span><%= page_title %></span>
+  <span></span>
+</nav>
 
 <div class="column">
   <ul class="actions">

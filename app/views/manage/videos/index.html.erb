@@ -1,1 +1,15 @@
-<%= render 'manage/shared/navigation' %>
+<nav>
+  <% if @back.present? %>
+    <span>
+      <%= link_to(@back, title: @back_title) do %>
+        <%== icon_back_svg %>
+      <% end %>
+    </span>
+  <% end %>
+  <span><%= page_title %></span>
+  <span>
+    <%= link_to(new_manage_upload_url) do %>
+      <%== icon_upload_svg %>
+    <% end %>
+  </span>
+</nav>

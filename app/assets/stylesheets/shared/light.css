@@ -1,3 +1,10 @@
+html
+{
+  --border-color: hsl(216, 35%, 96%);
+  --text-color: hsl(0, 0%, 0%);
+  --list-item-hover-color: hsl(216, 35%, 96%);
+}
+
 body,
 form input,
 form button,
@@ -26,7 +33,7 @@ form div.submit button {
 form div.submit button:active {
   background-color: rgb(241, 241, 0);
 }
-div#viewport {
+div#appcontent {
   background: radial-gradient(at 0% 100%, white 70%, rgb(0, 255, 0) 70%, rgb(0, 255, 0) 72%, rgb(0, 170, 255) 72%, rgb(0, 170, 255) 90%);
 }
 nav > svg g {

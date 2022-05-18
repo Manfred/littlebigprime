@@ -1,0 +1,11 @@
+<nav>
+  <span></span>
+  <span><%= page_title %></span>
+  <span></span>
+</nav>
+<section>
+  <ul class="navigation">
+    <li><%= link_to action_title(controller_path: 'manage/videos', action_name: 'index'), manage_videos_path %></li>
+    <li><%= link_to action_title(controller_path: 'manage/passwords', action_name: 'index'), manage_passwords_path %></li>
+  </ul>
+</section>

@@ -4,17 +4,3 @@ div#viewport {
 .column {
   padding: 2em;
 }
-nav {
-}
-nav * {
-  flex: auto;
-}
-nav ul
-{
-  display: flex;
-  gap: 1em;
-}
-nav > svg {
-  width: 5em;
-  margin: 1em;
-}

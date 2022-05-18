@@ -12,7 +12,7 @@
   <%#= tag(:link, rel: 'apple-touch-icon', href: image_path('touch-icon.png')) %>
 </head>
 <%= tag.body(class: controller.controller_name) do %>
-  <div id="viewport">
+  <div id="appcontent">
     <%= yield %>
   </div>
 <% end %>
