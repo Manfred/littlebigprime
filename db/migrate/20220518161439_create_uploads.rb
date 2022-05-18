@@ -4,7 +4,7 @@
 class CreateUploads < ActiveRecord::Migration[7.0]
   def change
     create_table :uploads do |t|
-      t.uuid :uuid
+      t.uuid :uuid, null: false, default: -> { 'gen_random_uuid()' }
       t.datetime :created_at, null: false, default: -> { 'CURRENT_TIMESTAMP' }
       t.datetime :updated_at, null: false, default: -> { 'CURRENT_TIMESTAMP' }
     end
