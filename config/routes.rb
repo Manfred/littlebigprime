@@ -11,6 +11,6 @@ Rails.application.routes.draw do
     resources :passwords, only: %i[new index create edit update]
     resource :session, only: %i[new create destroy]
     resources :videos, only: %i[index]
-    resources :uploads, onlu: %i[new create]
+    resources :uploads, only: %i[new create]
   end
 end

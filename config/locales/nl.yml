@@ -30,6 +30,9 @@ nl:
         username: Gebruikersnaam
         password: Wachtwoord
         login: Log in
+    uploads:
+      new:
+        page_title: Upload video
     videos:
       index:
         page_title: Video's

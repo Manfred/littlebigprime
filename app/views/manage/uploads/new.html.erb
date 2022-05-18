@@ -1,0 +1,22 @@
+<nav>
+  <% if @back.present? %>
+    <span>
+      <%= link_to(@back, title: @back_title) do %>
+        <%== icon_back_svg %>
+      <% end %>
+    </span>
+  <% end %>
+  <span><%= page_title %></span>
+  <span>
+  </span>
+</nav>
+<section>
+  <%= form_with model: [:manage, @upload] do |form| %>
+    <%= form.field :uploaded_file do %>
+      <%= form.file_field :uploaded_file %>
+    <% end %>
+    <div class="submit">
+      <%= form.button t('.upload') %>
+    </div>
+  <% end %>
+</section>
