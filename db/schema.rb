@@ -41,7 +41,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_18_161439) do
   end
 
   create_table "uploads", force: :cascade do |t|
-    t.uuid "uuid"
+    t.uuid "uuid", default: -> { "gen_random_uuid()" }, null: false
     t.datetime "created_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
     t.datetime "updated_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
   end
