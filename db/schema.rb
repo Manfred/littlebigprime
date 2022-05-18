@@ -10,8 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_19_171644) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_18_161439) do
   # These are extensions that must be enabled in order to support this database
+  enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
   create_table "accounts", force: :cascade do |t|
@@ -35,6 +36,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_19_171644) do
     t.text "digest", null: false
     t.string "prefix", null: false
     t.datetime "deactivated_at"
+    t.datetime "created_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.datetime "updated_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
+  end
+
+  create_table "uploads", force: :cascade do |t|
+    t.uuid "uuid"
     t.datetime "created_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
     t.datetime "updated_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
   end
