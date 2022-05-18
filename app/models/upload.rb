@@ -8,6 +8,8 @@ class Upload < ApplicationRecord
 
   attr_accessor :uploaded_file
 
+  scope :ordered, -> { order(created_at: :desc, id: :desc) }
+
   def path
     File.join(self.class.path, uuid)
   end

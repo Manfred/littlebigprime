@@ -3,6 +3,8 @@
 module Manage
   # Creates an authenticated session when an account can be authenticated through username and password.
   class SessionsController < ApplicationController
+    skip_before_action :require_account
+
     def new
       @session = AuthenticatedSession::Create.new(verify: :account)
     end

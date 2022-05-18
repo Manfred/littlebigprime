@@ -1,0 +1,5 @@
+section .video {
+  background-color: var(--card-background-color);
+  aspect-ratio: 9/16;
+  max-width: 20em;
+}
